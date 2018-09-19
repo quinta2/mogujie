@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/font/font_l8aky31owqmsfw29/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="/font/font_6da68bqz92wng66r/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="/font/font_d26cbs65x8e3766r/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="/font/font_qkl6dynjjkh85mi/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="/font/font_k925z7q5rsm50zfr/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="/font/font_6nw696ooo7sqbyb9/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/listPage.css"/>
+		
+	</head>
+	
+	<body>
+		<!--右侧导航条-->
+		<div class="mgj_rightbar1">
+			
+		</div>
+		<!--顶部-->
+		<div class="header_top1"></div>
+		<div class="header_b">
+			<div id="mar_au" class="headerm_ce1">
+				
+			</div>
+		</div>
+		<!--wrap1-->
+		<div class="wrap_ban3 wrap1 clearfix">
+			<p class="wrap1_t">
+				<a href="#">上衣</a><a href="#">裙子</a><a href="#">裤子</a><a href="#">内衣</a><a href="#">上衣</a><a href="#">上衣</a><a href="#">上衣</a><a href="#">上衣</a><a href="#">上衣</a><a href="#">上衣</a><a href="#">上衣</a><a href="#">上衣</a><a href="#">上衣</a><a href="#">上衣</a><a href="#">上衣</a>
+			</p>
+			<div class="wrap1_bl">
+				<div class="block">
+					<h2>当季热卖</h2>
+					<dl>
+						<dt><a href="#"><img src="images/remai.jpg" /></a></dt>
+						<dd><a href="#">美裙套装<em></em></a><a href="#">半身裙<em></em></a><a href="#">连衣裙<em></em></a><a class="active" href="#">卫衣裙<em></em></a><a href="#">蕾丝裙<em></em></a><a href="#">高腰裙<em></em></a><a href="#">背带裙<em></em></a><a href="#">牛仔裙<em></em></a><a href="#">长裙<em></em></a><a href="#">包臀裙<em></em></a></dd>
+					</dl>
+				</div>
+				<div class="block">
+					<h2>热品推荐</h2>
+					<dl>
+						<dt><a href="#"><img src="images/remai.jpg" /></a></dt>
+						<dd><a href="#">韩范裙<em></em></a><a href="#">复古连衣裙<em></em></a><a href="#">收腰裙<em></em></a><a class="active" href="#">背心裙<em></em></a><a href="#">印花裙<em></em></a><a href="#">鱼尾裙<em></em></a><a href="#">伞裙<em></em></a><a href="#">小白裙<em></em></a><a href="#">气质裙<em></em></a><a href="#">衬衫裙<em></em></a></dd>
+					</dl>
+				</div>
+				<div class="block">
+					<h2>时尚元素</h2>
+					<dl>
+						<dt><a href="#"><img src="images/remai.jpg" /></a></dt>
+						<dd><a href="#">蝴蝶结<em></em></a><a class="active" href="#">格子<em></em></a><a class="active" href="#">条纹<em></em></a><a href="#">波点<em></em></a><a class="active" href="#">流苏<em></em></a><a href="#">印花<em></em></a><a href="#">蕾丝<em></em></a><a href="#">字母<em></em></a><a href="#">碎花<em></em></a><a href="#">荷叶边<em></em></a><a href="#">纯色<em></em></a></dd>
+					</dl>
+				</div>
+				<div class="block">
+					<h2>女神の爱</h2>
+					<dl>
+						<dt><a href="#"><img src="images/remai.jpg" /></a></dt>
+						<dd><a href="#">不规则<em></em></a><a href="#">百褶裙<em></em></a><a href="#">小黑裙<em></em></a><a class="active" href="#">甜美<em></em></a><a href="#">时尚套装<em></em></a><a href="#">韩范<em></em></a><a href="#">气质<em></em></a><a href="#">清新女神<em></em></a><a href="#">飘逸长裙<em></em></a><a href="#">一步裙<em></em></a></dd>
+					</dl>
+				</div>
+			</div>
+			<div class="wrap1_br">
+				<a href="#"><img src="images/wrap1_img.png" /></a>
+			</div>
+		</div>
+		<!--wrap2-->
+		<div class="wrap2 clearfix">
+			<h1 class="wrap2_tit">上衣</h1>
+			<p class="sel_pri"><span><em>￥</em><input type="text" value="" /></span><em>-</em><span><em>￥</em><input type="text" value="" /></span><span class="submit">确定</span><em></em><em ></em></p>
+		</div>
+		<!--wrap3-->
+		<div class="wrap_ban10 wrap3 clearfix">
+			<h2>猜你喜欢</h2>
+			<div class="ban10_list">
+				<% for(var i = 0;i<goods.length;i++){ %>
+					<a href="/detailPage?id=<%= goods[i].goodsId%>">
+						<dl data-id="<%= goods[i].goodsId %>">
+							<dt>
+								<a href="#"><img src="<%= goods[i].src %>"" /></a>
+								<a href="#">找相似</a>
+							</dt>
+							<dd>
+								<a href="#"><%= goods[i].title %></a>
+								<span class="now_pri">￥<%= goods[i].now_pri %></span>
+								<span class="ori_pri">￥<%= goods[i].ori_pri %></span>
+								<a href="#"><i class="iconfont">&#xe60f;<em class="browsing"><%= goods[i].browsing %></em></i></a>
+							</dd>
+						</dl>
+					</a>
+				<% } %>
+			</div>
+		</div>
+		<div id="foot1">
+			
+		</div>
+	</body>
+	<script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(".mgj_rightbar1").load("index.html .mgj_rightbar")
+		$(".header_top1").load("index.html .header_top")
+		$("#foot1").load("index.html #foot")
+		$(".headerm_ce1").load("index.html .headerm_ce")
+		
+		$(".wrap1").children("p").children("a").click(function(){
+			$(".wrap1").children("p").children("a").css({
+				background:"#FAFAFA",
+				borderLeft:"1px solid #fafafa",
+				borderRight:"1px solid #fafafa",
+				borderTop:"2px solid #fafafa"
+			})
+			$(this).css({
+				background:"#fff",
+				borderLeft:"1px solid #ccc",
+				borderRight:"1px solid #ccc",
+				borderTop:"2px solid #FF0077"
+			})
+		});		
+		
+	</script>
+</html>

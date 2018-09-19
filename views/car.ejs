@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="font/font_l8aky31owqmsfw29/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="font/font_6da68bqz92wng66r/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="font/font_d26cbs65x8e3766r/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="font/font_qkl6dynjjkh85mi/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="font/font_k925z7q5rsm50zfr/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="font/font_6nw696ooo7sqbyb9/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="font/font_pu0aharb2m/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<style type="text/css">
+			img{width: 100px;}
+			tbody tr td{text-align: center;}
+			table tr td input{background: #fff;}
+			thead tr th{height: 30px;text-align: center;}
+			span{display: block;padding: 10px 20px;border-radius: 4px;color: #555;}
+		</style>
+	</head>
+	<body>
+		<div class="mgj_rightbar">
+			<a href="car.html"><em class="mgj_num" style="color: red;">0</em><i class="iconfont">&#xe60b;</i>购物车<strong></strong></a>
+			<a href="#"><i class="iconfont">&#xe61f;</i>优惠券<strong></strong></a>
+			<a href="#"><i class="iconfont">&#xe61b;</i>钱包<strong></strong></a>
+			<a href="#"><i class="iconfont">&#xe635;</i>足迹<strong></strong></a>
+			<a href="#"><i class="iconfont">&#xe6a9;</i><strong></strong></a>
+		</div>
+		<div class="header_top">
+			<div id="mar_au" class="headert_mid" >
+				<a href="index.html"><i class="iconfont">&#xe8b9;</i>蘑菇街首页</a>
+				<div class="headert_midl">
+					<a class="logon" href="loginPage.html">登录<em>|</em></a>
+					<a href="#"><i class="iconfont">&#xe64f;</i>我的订单<em>|</em></a>
+					<a href="#"><i class="iconfont">&#xe61a;</i>购物车<em>|</em>
+						<span class="car-info"></span>
+					</a>
+					<a class="a_service" href="#">客户服务<i class="iconfont">&#xf01fa;</i>
+						<ul class="headert_dropdown">
+							<li>消费者服</li>
+							<li>商家者服</li>
+							<li>规则中心</li>
+						</ul>
+						<em>|</em>
+					</a>
+					<a href="#">商家后台</a>
+				</div>
+			</div>
+		</div>
+		<table border="1" cellspacing="0" width="800" align="center" id="tab">
+			<thead>
+				<tr>
+					<th>商品货号</th>
+					<th>图片</th>
+					<th>商品标题</th>
+					<th>促销价</th>
+					<th>数量</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%= for(var i = 0;i<goods.length;i++){%>
+				<tr data-id="<%= goods.goodsId %>">
+						<td><%= goods.goodsId%></td>
+						<td><img src="<%= goods.src %>"/></td>
+						<td><%= goods.title %></td>
+						<td><%= goods.now_pri%></td>
+						<td style="width:100px;text-align:center;">
+							<input type = "button" value="+" style="margin-left:8px;border:none;border:1px solid #ccc;border-right:none;float:left;width:20px;height:22px;line-height:22px;" />
+							<input type="text" value="3" style="float:left;width:40px;text-align:center;font-size:16px;height:20px;line-height:20px;border:none;border:1px solid #ccc;" />
+							<input type = "button" style="float:left;border:none;border:1px solid #ccc;border-left:none;width:20px;height:22px;line-height:22px;" value="-" />
+						</td>
+						<td><span>删除</span></td>
+					</tr>
+			</tbody>
+		</table>
+		<div id="foot1">
+		
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(".mgj_rightbar1").load("index.html .mgj_rightbar")
+		$(".header_top1").load("index.html .header_top")
+		$("#foot1").load("index.html #foot1")
+		class Car{
+			constructor(options){
+				this.body = options.tbody
+				this.load()
+			}
+			load(){
+				var that = this;
+				$.ajax({
+					url:"json/goods.json"
+				}).then(function(res){
+					that.res = res;
+					that.getCookie();
+					that.display();
+					that.remove();
+				},function(a,b,c){
+					console.error("当前请求失败，错误代码为：" + b)
+				});
+			}
+			getCookie(){
+				this.goods = JSON.parse($.cookie("goods3"));
+			}
+			display(){
+				var that = this;
+				var str = "";
+				console.log(that.goods)
+				this.res.forEach(function(val1){
+					that.goods.forEach(function(val2){
+
+						if(val1.goodsId == val2.id){
+							str += `
+								<tr data-id="${val1.goodsId}">
+									<td>${val1.goodsId}</td>
+									<td><img src="${val1.src}"/></td>
+									<td>${val1.title}</td>
+									<td>${val1.now_pri}</td>
+									<td style="width:100px;text-align:center;">
+										<input type = "button" value="+" style="margin-left:8px;border:none;border:1px solid #ccc;border-right:none;float:left;width:20px;height:22px;line-height:22px;" />
+										<input type="text" value="${val2.num}" style="float:left;width:40px;text-align:center;font-size:16px;height:20px;line-height:20px;border:none;border:1px solid #ccc;" />
+										<input type = "button" style="float:left;border:none;border:1px solid #ccc;border-left:none;width:20px;height:22px;line-height:22px;" value="-" />
+									</td>
+									<td><span>删除</span></td>
+								</tr>
+							`
+						}
+					})
+				})
+				this.body.html(str);
+			}
+			remove(){
+				var that = this;
+				this.body.on("click","span",function(){
+					var index = $(this).parent().parent().attr("data-id");
+					for(var i = 0;i<that.goods.length;i++){
+						if(that.goods[i].id == parseInt(index)){
+							break;
+						}
+					}
+					that.goods.splice(i,1)
+					
+					var str = JSON.stringify(that.goods);
+					$.cookie("goods",str)
+					
+					$(this).parent().parent().remove();
+				})
+			}
+		}
+		
+		
+		
+		new Car({
+			tbody:$("tbody")
+		})
+	</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="font/font_zqiv3ys7z1/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/loginPage.css"/>
+		<style type="text/css">
+			.error{border: solid 2px red;color: red;}
+			.valid{border: solid 2px green;color: green;}
+		</style>
+	</head>
+	<body>
+		<div class="header_nav">
+			<a href="#"><img src="images/logo.png" title="loglo" /></a>
+			<span>依《网络安全法》相关要求，即日起蘑菇街会员登陆需绑定手机。为保障您的账户安全及正常使用，如您尚未绑定，请尽快完成绑定，感谢您的理解和支持!</span>
+		</div>
+		<div class="lg_cont">
+			<div class="lg_bg">
+				<form action="/loginPage/submit" method="POST">
+					<ul>
+						<li class="log">						
+							<a class="active" href="#">普通登录</a>
+							<div class="box1" style="display:block;">
+								<p>
+									<input  id="username" type="text" required="true" name="username" placeholder="用户名/邮箱/手机号" /><span class="lg_info"></span>
+								</p>
+								<p>
+									<input id="pass" type="text" placeholder="密码" required="true" name="password" />	<span class="lg_info"></span>				
+								</p>
+								<p class="login"><input type="submit" style="color: #fff;border:none;" value="登录" /></p>
+								<!-- <p><a style="flost:left;" class="login_qq" href="#"><i class="iconfont">&#xe60b;</i>qq登录</a><a style="float:r	ight;" class="login_weixin" href="#"><i class="iconfont">&#xe654; </i>微信登录</a></p> -->
+								<a href="#" style="float:right;">忘记密码</a>
+							</div>
+						</li>
+						<li class="reg">
+							<a href="#">注册</a>
+							<div class="box2" style="display: none;position: absolute;left:20px;top:55px;">
+								<p>
+									<input  id="username" type="text" required="true" name="username" placeholder="用户名/邮箱/手机号" /><span class="lg_info"></span>
+								</p>
+								<p>
+									<input id="pass" type="text" placeholder="密码" required="true" name="password" />	<span class="lg_info"></span>				
+								</p>
+								<p class="login"><input type="submit" style="color: #fff;border:none;" value="注册" /></p>
+											
+								<!-- <p><a class="login_qq" href="#"><i class="iconfont">&#xe60b;</i>qq登录</a><a class="login_weixin" href="#"><i class="iconfont">&#xe654; </i>微信登录</a></p> -->
+								<a href="#" style="float:right;">忘记密码</a>
+							</div>
+						</li>
+					</ul>
+					
+				</form>
+			</div>
+		</div>
+		<div id="foot1">
+			
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.validate.messages_zh.js" type="text/javascript" charset="utf-8"></script>
+</html>

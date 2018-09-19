@@ -1,0 +1,42 @@
+@charset "UTF-8";
+*{margin: 0;padding: 0;}
+.iconfont{margin: 0;padding: 0;}
+.header_nav {
+  margin: 0 auto;
+  width: 1190px;
+  overflow: hidden;
+  padding: 20px 0; }
+
+.header_nav img {
+	float: left;
+  width: 220px; }
+
+.header_nav span {
+	float: left;
+	margin-top:20px;
+	width: 850px;
+	text-align: center;
+  height: 30px;
+  border: 1px solid sandybrown;
+  background: #F5C6CB;
+  font: 12px/30px "微软雅黑";
+  text-align: center; }
+.lg_cont {
+  width: 100%;
+  height: 600px;
+  background: url(../images/login_bg.png) repeat-x;position: relative; }
+		.lg_bg{position:absolute;top:80px;right: 120px;height: 340px;width:360px;background: rgba(255,255,255,.7);padding: 30px 20px;box-sizing: border-box;}
+				.lg_bg ul{height: 40px;border-bottom: 1px solid #ccc;}
+								.lg_bg ul li{float: left;width: 120px;height: 40px;margin-right: 40px;}
+										.lg_bg ul li a{float: left;width: 120px;height: 40px;text-align: center;font: 14px/40px "微软雅黑";font-weight: bold;color: #555;}
+										.lg_bg ul li a:nth-child(1){margin-left: 20px;}
+										.lg_bg ul li a.active{height:36px;color: #FF0077;border-bottom: 2px solid #FF0077;}
+				.lg_bg p{margin-left:20px;margin-top:20px;}
+							.lg_bg p input{height: 40px;width: 270px;border:1px solid #999;background: none;text-indent: 10px;}
+							
+							.lg_bg .login{cursor:pointer;border: none;display:block;height: 40px;width: 270px;background:#FF0077;color: #fff;font: 14px/40px "微软雅黑";text-align: center;}
+							.lg_bg p a.login_qq{margin-top:-10px;float: left;width: 110px;height: 40px;margin-right: 40px;font: 14px/40px "微软雅黑";color: #555;}
+									.lg_bg p a.login_qq .iconfont{display:inline-block;font-size: 18px;color: dodgerblue;margin-right: 5px;}
+							.lg_bg p a.login_weixin{margin-top:-10px;float: left;width: 110px;height: 40px;margin-right: 40px;font: 14px/40px "微软雅黑";color: #555;}
+									.lg_bg p a.login_weixin .iconfont{display:inline-block;font-size: 18px;color: limegreen;margin-right: 5px;}
+				.lg_bg>a{float: right;color: #555;margin-right: 40px;text-decoration: underline;}
